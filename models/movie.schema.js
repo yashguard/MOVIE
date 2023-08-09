@@ -7,5 +7,7 @@ const movieSchema = new mongoose.Schema({
   price: Number,
   date: String,
   actors: String,
-  images: [],
+  images: Array,
 });
+
+module.exports = mongoose.model("movie", movieSchema);

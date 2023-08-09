@@ -3,6 +3,7 @@ const cors = require("cors");
 const router = require("./routes/movie.routes");
 const server = express();
 server.use(express.json());
+const connect = require("./config/db");
 server.use(cors());
 server.use(express.urlencoded({ extended: true }));
 require("dotenv").config({ path: "./config/.env" });
@@ -14,4 +15,5 @@ server.use(express.static(__dirname + "/public"));
 
 server.listen(port, () => {
   console.log("listening on port " + port);
+  connect()
 });

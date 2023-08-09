@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const { movieHome, movieUpload } = require("../controllers/movie.controllers");
 const multer = require("multer");
+const middleware = require("../middlewares/movie.middleware");
 const router = Router();
 
 const storage = multer.diskStorage({
@@ -17,6 +18,6 @@ const upload = multer({
 }).array("movieImage");
 
 router.get("/", movieHome);
-router.post("/upload", upload, movieUpload);
+router.post("/upload", upload, middleware, movieUpload);
 
 module.exports = router;
