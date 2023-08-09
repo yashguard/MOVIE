@@ -1,5 +1,9 @@
 const { Router } = require("express");
-const { movieHome, movieUpload } = require("../controllers/movie.controllers");
+const {
+  movieHome,
+  movieUpload,
+  imageView,
+} = require("../controllers/movie.controllers");
 const multer = require("multer");
 const middleware = require("../middlewares/movie.middleware");
 const router = Router();
@@ -18,6 +22,7 @@ const upload = multer({
 }).array("movieImage");
 
 router.get("/", movieHome);
+router.get("/imageview", imageView);
 router.post("/upload", upload, middleware, movieUpload);
 
 module.exports = router;

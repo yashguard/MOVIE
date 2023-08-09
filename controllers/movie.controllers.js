@@ -29,6 +29,11 @@ const movieUpload = (req, res) => {
     images: images,
   });
   res.send("Details added successfully");
+  images.splice(0, images.length);
 };
 
-module.exports = { movieHome, movieUpload };
+const imageView = (req, res) => {
+    res.render("view")
+};
+
+module.exports = { movieHome, movieUpload, imageView };
