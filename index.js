@@ -12,6 +12,8 @@ server.use("/form", router);
 server.set("view engine", "ejs");
 server.set("views", __dirname + "/views");
 server.use(express.static(__dirname + "/public"));
+var cookieParser = require('cookie-parser')
+server.use(cookieParser())
 
 server.listen(port, () => {
   console.log("listening on port " + port);

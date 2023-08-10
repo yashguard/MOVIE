@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Form</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form action="/form/upload" method="post" enctype="multipart/form-data">
+        <h1 style="margin-bottom: 30px;">Enter the movie details :</h1>
+        <label>Enter the Movie Title : </label><input type="text" name="movieName"><br><br>
+        <label>Enter the Movie Description : </label><input type="text" name="movieDescription"><br><br>
+        <label>Enter the Movie Rating : </label><input type="number" name="movieRating"><br><br>
+        <label>Enter the Movie Price : </label><input type="number" name="moviePrice"><br><br>
+        <label>Enter the Movie Release Date : </label><input type="date" name="movieDate"><br><br>
+        <label>Enter the Actors Name of Movie : </label><input type="text" name="movieActorsName"><br><br>
+        <input type="file" multiple name="movieImage"><br><br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>

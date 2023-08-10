@@ -4,8 +4,12 @@ let images = [];
 let path = homePath();
 
 const movieHome = (req, res) => {
-  res.render("index");
+  res.render("form");
 };
+
+const home = (req, res) => {
+  res.render("index")
+}
 
 const movieUpload = (req, res) => {
   let {
@@ -36,4 +40,8 @@ const imageView = (req, res) => {
     res.render("view")
 };
 
-module.exports = { movieHome, movieUpload, imageView };
+const notavailables = (req, res) => {
+  res.status(404).send("<h1>404 Page Not Available</h1>");
+}
+
+module.exports = { movieHome, movieUpload, imageView, notavailables, home };
