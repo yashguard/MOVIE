@@ -5,6 +5,8 @@ const {
   imageView,
   notavailables,
   home,
+  login,
+  signup,
 } = require("../controllers/movie.controllers");
 const multer = require("multer");
 const middleware = require("../middlewares/movie.middleware");
@@ -24,9 +26,7 @@ const upload = multer({
 }).array("movieImage");
 
 router.get("/", movieHome);
-router.get("/home", home)
-router.get("/imageview", imageView);
 router.post("/upload", upload, middleware, movieUpload);
-router.get("/*", notavailables)
+router.get("/*", notavailables);
 
 module.exports = router;

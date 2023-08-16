@@ -7,10 +7,6 @@ const movieHome = (req, res) => {
   res.render("form");
 };
 
-const home = (req, res) => {
-  res.render("index")
-}
-
 const movieUpload = (req, res) => {
   let {
     movieName,
@@ -36,12 +32,8 @@ const movieUpload = (req, res) => {
   images.splice(0, images.length);
 };
 
-const imageView = (req, res) => {
-    res.render("view")
-};
-
 const notavailables = (req, res) => {
   res.status(404).send("<h1>404 Page Not Available</h1>");
-}
+};
 
-module.exports = { movieHome, movieUpload, imageView, notavailables, home };
+module.exports = { movieHome, movieUpload, notavailables };
